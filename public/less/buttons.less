@@ -1,0 +1,26 @@
+.btn {
+	padding: 10px 16px;
+	border: 1px solid;
+	text-align: center;
+	cursor: pointer;
+	margin: 2px;
+	border-radius: 4px;
+	transition-duration:.3s;
+}
+.btn-cover {
+	border-color: white;
+	color: white;
+	&:hover {
+		background: white;
+		color: @fuente-color-secundario;
+	}
+}
+.btn-uppercase {
+	text-transform: uppercase;
+	font-size: .75rem;
+}
+.btn-default {
+	border-color: lighten(@color-gris,20%);
+	color: @color-gris;
+	font-weight: 200;
+}
