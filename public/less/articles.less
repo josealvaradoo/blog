@@ -5,17 +5,37 @@
 		padding-bottom: 25px;
 		border-bottom: 1px dashed #d7d7d7;
 		margin-bottom: 20px;
+		.header a {
+			color: inherit;
+			transition-duration:.3s;
+			&:hover {
+				color: #000;
+				text-decoration: none;
+			}
+		}
 		.header h2 {
 			font-size: 2.4rem;
 			font-weight: 700;
 		}
-		.body p {
-			text-align: justify;
-			font-family: "Quattrocento";
-			font-size: 1.3rem;
-			line-height: 1.4rem;
-			font-weight: 100;
-			color: @fuente-color-secundario;
+		.body {
+			p {
+				text-align: justify;
+				font-family: "Quattrocento";
+				font-size: 1.3rem;
+				line-height: 1.4rem;
+				font-weight: 100;
+				color: @fuente-color-secundario;
+			}
+			.readmore {
+				position: relative;
+				color: inherit;
+				transition-duration: .3s;
+				left: 0;
+				&:hover {
+					color: #222;
+					left: 4px;
+				}
+			}
 		}
 		.footer {
 			color: lighten(@fuente-color, 40%);
@@ -48,5 +68,177 @@
 article {
 	p {
 		margin-bottom: 1rem;
+	}
+}
+// Post Template
+.post-template {
+	article {
+		.header h2 {
+			font-size: 2.4rem;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+		.body {
+			p,pre,h3,h4,h5,h6,img,blockquote,iframe,embed,table,.post-alert {
+				margin: 1rem 0;
+			}
+			p {
+				text-align: justify;
+				font-family: "Quattrocento";
+				font-size: 1.3rem;
+				line-height: 1.4rem;
+				font-weight: 100;
+				color: @fuente-color-secundario;
+				strong {
+					color: #505050;
+				}
+			}
+			h3 {
+				font-size: 1.8rem;
+			}
+			img {
+				max-width: 100%;
+			}
+			code {
+				padding: 3px 6px;
+				border-radius: 3px;
+				border: 1px solid lighten(@link-color,20%);
+				color: darken(@link-color,10%);
+				background: lighten(@link-color, 38%);
+			}
+			pre {
+				padding: 6px;
+				border-radius: 3px;
+				border: 1px solid lighten(@link-color,20%);
+				color: darken(@link-color,10%);
+				background: lighten(@link-color, 38%);
+				code {
+					font-family: monospace;
+					font-size: 1.05rem;
+					padding: none;
+					border: 0;
+					border-radius: none;
+					background: none;
+					display: block;
+				}	
+			}
+			blockquote {
+				margin-left: -5px;
+				border-left: 6px solid @color-marron;
+				padding: 10px;
+				min-height: 40px;
+				color: @color-gris;
+				font-family: "Quattrocento";
+				font-size:1.15rem;
+			}
+			mark {
+				background: #FFE299;
+				color: @fuente-color-secundario;
+				padding: 0 6px;
+			}
+			iframe {
+				width: 100%;
+			}
+			table {
+				display: table;
+				border-spacing: 0;
+				th {
+					border-bottom: 2px solid @border-color;
+				}
+				th,td {
+					display: table-cell;
+					padding: 10px 20px;
+				}
+				&.table-bordered {
+					border: 1px solid @border-color;
+					th {
+						border-bottom: 2px solid @border-color;
+						border-right: 1px solid @border-color;
+						&:last-child {
+							border-right: 0;
+						}
+					}
+					td {
+						border-bottom: 1px solid @border-color;
+						border-right: 1px solid @border-color;
+						&:last-child {
+							border-right: 0;
+						}
+					}
+					tr:last-child td {
+						border-bottom: 0;
+					}
+				}
+				&.table-striped {
+					tr:nth-child(even) td {
+						background: #eee;
+					}
+				}
+				&.table-hover {
+					tr:hover td {
+						background: #eaeaea;
+					}
+				}				
+			}
+			.post-alert {
+				position: relative;
+				display: block;
+				padding: 15px;
+				p {
+					margin: 0;
+					padding: 0;
+					font-family: @fuente-familia !important;
+					font-size: 1rem;
+					color: white;
+				}
+				.close {
+					color: white;
+					position: absolute;
+					top: 12px;
+					right: 15px;
+					cursor: pointer;
+				}
+			}
+		}
+		.footer {
+			margin-top: 80px;
+			.avatar {
+				width: 90px;
+				height: 90px;
+				border-radius: 100px;
+				border: 3px solid #ebebeb;
+				background: url("../images/avatar/avatar.png");
+				background-size: 100%;
+			}
+			p {
+				color: darken(@color-gris, 10%);
+			}
+			.sharing {
+				a {
+					color: darken(@color-gris,10%);
+					transition-druation:.3s;
+					img {
+						display: inline-block;
+						margin: 6px 3px  0 0;
+						width: 40px;
+						border-bottom: 2px solid transparent;
+						&.facebook:hover {
+							border-bottom: 2px solid #28427b;
+						}
+						&.twitter:hover {
+							border-bottom: 2px solid #438ec3;
+						}
+						&.google:hover {
+							border-bottom: 2px solid #c13d2d;
+						}
+					}
+					&:hover {
+						color: inherit;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
 	}
 }
